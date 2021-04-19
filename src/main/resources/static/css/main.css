@@ -1,5 +1,9 @@
 :root {
     --nav-color: #fcf2f2;
+    --modal-header-color: #fbceb1;
+    --gf-light-red: #FF7F7F;
+    --gf-yellow: #fffe7a;
+    --gf-green: #0bda51;
 }
 
 .gf-navbar {
@@ -9,4 +13,40 @@
 
 .gf-nav-img {
     height: 50px;   
+}
+
+.gf-btn-lred {
+    background-color: var(--gf-light-red);
+    border: 1px red solid;
+}
+
+.gf-btn-lred:hover {
+    border: 2px red solid;
+}
+
+.gf-btn-green {
+    background-color: var(--gf-green);
+    border: 1px green solid;
+}
+
+.gf-btn-green:hover {
+    border: 2px green solid;
+}
+
+.gf-btn-yellow {
+    background-color: var(--gf-yellow);
+    border: 1px darkgoldenrod solid;
+}
+
+.gf-btn-yellow:hover {
+    border: 2px darkgoldenrod solid;
+}
+
+.hand-pointer:hover {
+    cursor: pointer;
+}
+
+.modal-header {
+    background-color: var(--modal-header-color);
+    border-bottom: 2px tomato solid;
 }

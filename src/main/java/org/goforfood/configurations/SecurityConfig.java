@@ -7,10 +7,12 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    private static final String[] PUBLIC_ROUTES = { "/", "/login", "/register", "/js/**", "/css/**", "/images/**" };
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/", "/js/**", "/css/**", "/images/**").permitAll().anyRequest()
-                .authenticated().and().formLogin().loginPage("/").and().logout().logoutSuccessUrl("/");
+        http.authorizeRequests().antMatchers(PUBLIC_ROUTES).permitAll().anyRequest().authenticated().and().formLogin()
+                .loginPage("/").and().logout().logoutSuccessUrl("/");
     }
 
 }

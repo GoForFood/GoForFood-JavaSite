@@ -1,0 +1,32 @@
+<div th:id="${modalId}" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><b th:text="#{connection}">Connection</b></h5>
+                <a class="hand-pointer" th:title="#{close}" th:attr="onclick=|_Dom.CloseModal('${modalId}')|">
+                    <img src="/images/icons/red_close.png" height="16px"></img>
+                </a>
+            </div>
+
+            <div class="modal-body">
+                <form action="login" method="POST">
+                    <div class="form-group">
+                        <label for="email-input" class="col-form-label">Email</label>
+                        <input name="email-input" id="email-input" type="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="user-password" class="col-form-label" th:text="#{password}">Password</label>
+                        <input name="password-input" id="password-input" type="password" class="form-control"></input>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="submit" class="btn gf-btn-green" th:text="#{login}">Login</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>

@@ -1,19 +1,46 @@
 <nav th:fragment="navs/main_nav">
-    
+
     <div class="navbar navbar-expand-lg gf-navbar">
         <div class="container-fluid">
 
             <a class="navbar-brand" href="/">
-                <img src="/images/logos/196x196.png" class="gf-nav-img">    
+                <img src="/images/logos/196x196.png" class="gf-nav-img">
             </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsiveContent" aria-controls="navbarResponsiveContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
 
             <div class="collapse navbar-collapse" id="navbarResponsiveContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                
+
                 </ul>
             </div>
-        
+
+            <div>
+                <span th:text="#{language}"></span>:
+                <select id="locales">
+                    <option value=""></option>
+                    <option value="pt" th:text="#{portuguese}"></option>
+                    <option value="en" th:text="#{english}"></option>
+                    <option value="fr" th:text="#{french}"></option>
+                </select>
+            </div>
+
+            <div sec:authorize="isAuthenticated()" class="d-inline-flex">
+                <a class="btn gf-btn-lred" th:text="#{logout}"></a>
+            </div>
+
+            <div sec:authorize="isAnonymous()" class="d-inline-flex">
+                <a class="btn gf-btn-green mx-1" th:text="#{login}" onclick="_Dom.AppendModal('/login')"></a>
+                <a class="btn gf-btn-yellow mx-1" th:text="#{register}" href=""></a>
+            </div>
+
         </div>
     </div>
-    
+
 </nav>
